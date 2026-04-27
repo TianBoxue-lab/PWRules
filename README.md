@@ -6,7 +6,6 @@
 
 &gt; **Paper**: ***An Interpretable Framework Applying Protein Words to Predict Protein–Small Molecule Complementary Pairing Rules*** ([arXiv:2604.16550](https://arxiv.org/abs/2604.16550))  
 &gt; **Authors**: Jingke Chen, Jingrui Zhong, Tazneen Hossain Tani, Zidong Su, Xiaochun Zhang, Boxue Tian*  
-&gt; **Affiliation**: MOE Key Laboratory of Bioinformatics, Tsinghua University  
 
 ---
 
