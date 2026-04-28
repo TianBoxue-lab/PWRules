@@ -49,6 +49,8 @@ The framework consists of two main components:
 
 ## 🚀 Quick Start
 
+> ⚠️ The examples below use a **limited demo rule library** containing only a small subset of protein word–fragment rules for demonstration purposes. 
+
 ### Installation
 
 ```bash
