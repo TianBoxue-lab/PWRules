@@ -6,7 +6,7 @@ import numpy as np
 import pickle
 from collections import defaultdict
 from pwrules.utils.utils import check_path, load_pkl
-from pwrules.fragment.frag_library import FragLibrary
+from pwrules.frag_library import FragLibrary
 from pwrules.utils.smiles import read_smiles_dict_from_smi, get_longest_molecule_component
 
 

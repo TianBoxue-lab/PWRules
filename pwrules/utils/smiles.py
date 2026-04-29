@@ -62,29 +62,6 @@ def read_smiles_dict_from_smi(input_path):
     return smiles_dict
 
 
-def draw_molecule(molecule, output_path):
-    if isinstance(molecule, Chem.Mol):
-        mol = molecule
-        input_type = "Mol"
-
-    elif isinstance(molecule, str):
-        mol = Chem.MolFromSmiles(molecule)
-        if mol is not None:
-            input_type = "SMILES"
-        else:
-            pattern = Chem.MolFromSmarts(molecule)
-            if pattern is not None:
-                mol = pattern
-                input_type = "SMARTS"
-            else:
-                raise ValueError("Failed to parse input string as SMILES or SMARTS")
-    else:
-        raise TypeError(f"Unsupported data type: {type(molecule)}")
-
-    img = Draw.MolToImage(mol)
-    img.save(output_path)
-
-
 def get_longest_molecule_component(input_smiles, use_atom_count=True):
     if '.' not in input_smiles:
         return input_smiles
