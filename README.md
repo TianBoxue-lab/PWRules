@@ -139,7 +139,7 @@ extractor = RuleExtractor(
     checkpoint_path='weight/demo_pwrules.pkl'
 )
 
-rules = extractor.extract_rules(
+extractor.extract_rules(
     train_data_path='demo/demo_train.pkl',
     val_data_path='demo/demo_valid.pkl'
 )
