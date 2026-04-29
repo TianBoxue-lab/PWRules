@@ -114,7 +114,8 @@ pprint(results)
 
 If you wish to train PWRules on your own protein–ligand binding data and extract interpretable word–fragment rules via Integrated Gradients (IG), we provide a modular training and explainability framework.
 
-> ⚠️ The training scripts below provide a **simplified framework** for custom model training and rule extraction. A **demo training dataset** is included for reference.
+> ⚠️ The training scripts below provide a **simplified framework** for custom model training and rule extraction. A [**demo training dataset**](https://cloud.tsinghua.edu.cn/d/2abf85606e7e4930bc4e/) is included for reference.
+
 
 ### 1. Train PWRules Model
 
