@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 &gt; **Paper**: ***An Interpretable Framework Applying Protein Words to Predict Protein–Small Molecule Complementary Pairing Rules*** ([arXiv:2604.16550](https://arxiv.org/abs/2604.16550))  
-&gt; **Authors**: Jingke Chen, Jingrui Zhong, Tazneen Hossain Tani, Zidong Su, Xiaochun Zhang, Boxue Tian*  
+&gt; **Authors**: Jingke Chen, Jingrui Zhong, Tazneen Hossain Tani, Zidong Su, Xiaochun Zhang, Boxue Tian*
 
 ---
 
@@ -67,6 +67,12 @@ pip install -r requirements.txt
 
 # Install PWRules package
 pip install -e .
+
+# Install pytorch
+# CUDA 11.8
+pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118
+# CUDA 12.1
+pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu121
 ```
 
 ### Predict Privileged Fragments
@@ -101,6 +107,42 @@ results = scorer.screen_library(
     top_k=100
 )
 pprint(results)
+```
+---
+
+## 🏗️ Training & Rule Extraction Framework
+
+If you wish to train PWRules on your own protein–ligand binding data and extract interpretable word–fragment rules via Integrated Gradients (IG), we provide a modular training and explainability framework.
+
+> ⚠️ The training scripts below provide a **simplified framework** for custom model training and rule extraction. A **demo training dataset** is included for reference.
+
+### 1. Train PWRules Model
+
+```python
+from pwrules import PWRulesTrainer
+
+trainer = PWRulesTrainer(config_path='configs/pwrules_config.yaml')
+
+trainer.train(
+    train_data_path='demo/demo_train.pkl',
+    val_data_path='demo/demo_valid.pkl'
+)
+```
+
+### 2. Extract Rules via Integrated Gradients
+
+```python
+from pwrules import RuleExtractor
+
+extractor = RuleExtractor(
+    config_path='configs/pwrules_config.yaml',
+    checkpoint_path='weight/demo_pwrules.pkl'
+)
+
+rules = extractor.extract_rules(
+    train_data_path='demo/demo_train.pkl',
+    val_data_path='demo/demo_valid.pkl'
+)
 ```
 
 ---
@@ -137,3 +179,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [MacFrag](https://github.com/yydiao1025/MacFrag/tree/main) for molecular fragmentation
 - [Captum](https://captum.ai/) for Integrated Gradients implementation
 - [RDKit](https://www.rdkit.org/) for cheminformatics utilities
+
