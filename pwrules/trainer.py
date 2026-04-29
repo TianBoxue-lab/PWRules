@@ -6,6 +6,7 @@ import torch.nn.functional as F
 import argparse
 from pathlib import Path
 import d2l.torch
+import os
 from pwrules.utils.utils import load_config
 from pwrules.utils.trail import fix_seed
 from pwrules.dataloader import PWRulesDataLoader
@@ -22,6 +23,8 @@ class PWRulesTrainer(object):
         self.device = self.devices[self.config.gpu_id]
         self.model_version = f'{self.config.model_name}'
         self.model_weight_dir = Path(__file__).parent.parent / 'weight'
+        if not os.path.exists(self.model_weight_dir):
+            os.makedirs(self.model_weight_dir)
 
     def train(self, train_data_path, val_data_path):
         fix_seed(self.config.seed)

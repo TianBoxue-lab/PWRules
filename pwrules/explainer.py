@@ -9,6 +9,7 @@ from pwrules.dataloader import PWRulesDataLoader
 from pwrules.model import PWRules
 from pathlib import Path
 from captum.attr import IntegratedGradients
+import os
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -22,6 +23,8 @@ class RuleExtractor(object):
         self.model_weight_dir = Path(__file__).parent.parent / 'weight'
         self.output_dir = Path(__file__).parent.parent / 'rules'
         self.frag_id_list = load_pkl(Path(__file__).parent.parent / 'data/frag_id_list.pkl')
+        if not os.path.exists(self.output_dir):
+            os.makedirs(self.output_dir)
 
     def extract_rules(self, train_data_path, val_data_path):
         fix_seed(self.config.seed)
