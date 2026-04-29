@@ -1,0 +1,10 @@
+seed: 1024
+gpu_id: 0
+batch_size: 16
+output_dim: 4876
+model_name: "demo_pwrules"
+lr: 0.001
+weight_decay: 0.00001
+t_max: 20
+max_epoch: 600
+max_bearable_epoch: 60
