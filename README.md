@@ -25,11 +25,11 @@ The framework consists of two main components:
 
 ## ✨ Key Features
 
-- 🔍 **Interpretable Rules**: Explicit protein word–fragment pairing rules instead of black-box predictions
-- 🎯 **Virtual Screening**: PWScore achieves competitive enrichment performance comparable to Glide and PSICHIC
-- 🧬 **Sequence-Only Input**: No experimental structure required — works from protein sequence alone
-- 🔄 **Complementary Integration**: PWScore synergizes with existing methods (Glide, PSICHIC) for improved enrichment
-- 🌐 **Broad Applicability**: Generalizes to unseen targets (e.g., SARS-CoV-2 M<sup>pro</sup>)
+- **Interpretable Rules**: Explicit protein word–fragment pairing rules instead of black-box predictions
+- **Virtual Screening**: PWScore achieves competitive enrichment performance comparable to Glide and PSICHIC
+- **Sequence-Only Input**: No experimental structure required — works from protein sequence alone
+- **Complementary Integration**: PWScore synergizes with existing methods (Glide, PSICHIC) for improved enrichment
+- **Broad Applicability**: Generalizes to unseen targets (e.g., SARS-CoV-2 M<sup>pro</sup>)
 
 ---
 
